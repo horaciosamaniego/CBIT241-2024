@@ -1,0 +1,65 @@
+---
+title: "Notas P1"
+author: "Horacio Samaniego"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(ggplot2)
+library(tidyverse)
+library(kableExtra)
+
+p1 = read.csv('~/Downloads/P1.csv',sep='\t')
+```
+
+## Cargar datos
+
+```{r}
+
+kable(p1, caption = "Calificaciones pruena 1",booktabs = TRUE) |>
+  kable_styling("hover") |>
+  scroll_box( height = "300px")
+
+```
+
+# ¿Cómo le fué al curso?
+
+Distibución de las notas
+```{r}
+print(table(p1$Nota))
+
+#distribución por percentiles
+summary(p1$Nota)
+```
+
+## ¿Debo preocuparme?
+-   Nota 4.0 corresponde a un 60%
+-   Como ocurre usualmente, existen 4 grupos. El promedio, los que "salva", los sobresalientes y los que estan super mal, en ese orden.
+    1.  Te sacaste entre un 5 y un 6
+
+        Estás en el promedio
+
+    2.  Estás cerca o debajo del 4
+
+        Debes ponerle color, para entender los conceptos que se hablan en clases y ojalá mejorar tu rendimiento. Usa el Discord, pregunta y participa en clases. Creo que enecesitas un pequeño empujón para quedar contento con tu rendimiento
+
+    3.  Estas cerca, o sobre el 6. Eres de los que le ha puesto mas color, y entusiasmo. Participa en Discord para contagiar con tu entusiamo a tus compañeros. Sigue aportando y preguntando!
+
+    4.  Estás muy por debajo del 4. Debes preocuparte. Acercate al profe para ver que estas haciendo mal. Si es falta de etusiasmo, hay poco que pueden hacer por ti, recupéralo. Si lo intentaste, acercate y participa en la clase, siéntate mas adelante, interrumpe para exigir que te expliquen. Debes preocpuarte, si. Es muy probable que debas cambiar radicalmente tu aproximación al ramo y seguro que puedes apoyarte en el profe y un par de amigos.
+
+## Distribución de notas
+
+```{r}
+ggplot(p1, aes(x = Nota)) + 
+  geom_histogram(aes(y = ..density..), bins = 10, colour = 1, fill = "white") + 
+  geom_density(lwd = 1.1, linetype = 1,colour = 4,fill = 4, alpha = 0.25,bw=0.35) +
+  annotate("text", x=6.45, y=.25, label="(3)",color=2,cex=5) +
+  annotate("text", x=5.2, y=.41, label="(1)",color=2,cex=5) +
+  annotate("text", x=3.6, y=.17, label="(2)",color=2,cex=5) +
+  annotate("text", x=2.3, y=.11, label="(4)",color=2,cex=5) +
+  scale_x_continuous(breaks=c(1.0:7.0))
+
+```
+
