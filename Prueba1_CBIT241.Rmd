@@ -19,7 +19,7 @@ p1 = read.csv('~/Downloads/P1.csv',sep='\t')
 ```{r Table de Notas, message=FALSE, warning=FALSE}
 p1 = read.csv('~/Downloads/P1.csv',sep='\t')
 
-kable(p1, caption = "Calificaciones prueba 1",booktabs = TRUE) |>
+kable(p1, caption = "Puntajes y nota de prueba 1 (Ecología de paisaje)",booktabs = TRUE) |>
   kable_styling("hover") |>
   scroll_box( height = "300px")
 
@@ -32,7 +32,7 @@ Aqui la tabla de frecuencia de las notas. Es una distibución de cuantas pruebas
 print(table(p1$Nota))
 
 ```
-puedes ver también, según tu nota, en que percentil estás
+De los 32 que dieron la prueba, hay 2 sietes, 8 rojos. Puedes ver también, según tu nota, en que percentil estás:
 
 ```{r, echo=FALSE}
 summary(p1$Nota)
