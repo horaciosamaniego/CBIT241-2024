@@ -17,6 +17,7 @@ p1 = read.csv('~/Downloads/P1.csv',sep='\t')
 ## Cargar datos
 
 ```{r Table de Notas, message=FALSE, warning=FALSE}
+p1 = read.csv('~/Downloads/P1.csv',sep='\t')
 
 kable(p1, caption = "Calificaciones pruena 1",booktabs = TRUE) |>
   kable_styling("hover") |>

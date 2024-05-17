@@ -583,7 +583,9 @@ display: none;
 
 <div id="cargar-datos" class="section level2">
 <h2>Cargar datos</h2>
-<pre class="r"><code>kable(p1, caption = &quot;Calificaciones pruena 1&quot;,booktabs = TRUE) |&gt;
+<pre class="r"><code>p1 = read.csv(&#39;~/Downloads/P1.csv&#39;,sep=&#39;\t&#39;)
+
+kable(p1, caption = &quot;Calificaciones pruena 1&quot;,booktabs = TRUE) |&gt;
   kable_styling(&quot;hover&quot;) |&gt;
   scroll_box( height = &quot;300px&quot;)</code></pre>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; ">
