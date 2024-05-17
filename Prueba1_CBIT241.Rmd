@@ -16,7 +16,7 @@ p1 = read.csv('~/Downloads/P1.csv',sep='\t')
 
 ## Cargar datos
 
-```{r}
+```{r Table de Notas, message=FALSE, warning=FALSE}
 
 kable(p1, caption = "Calificaciones pruena 1",booktabs = TRUE) |>
   kable_styling("hover") |>
@@ -26,13 +26,18 @@ kable(p1, caption = "Calificaciones pruena 1",booktabs = TRUE) |>
 
 # ¿Cómo le fué al curso?
 
-Distibución de las notas
+Aqui la tabla de frecuencia de las notas. Es una distibución de cuantas pruebas tuvieron qué nota.
 ```{r}
 print(table(p1$Nota))
 
-#distribución por percentiles
-summary(p1$Nota)
 ```
+puedes ver también, según tu nota, en que percentil estás
+
+```{r, echo=FALSE}
+summary(p1$Nota)
+
+```
+
 
 ## ¿Debo preocuparme?
 -   Nota 4.0 corresponde a un 60%
