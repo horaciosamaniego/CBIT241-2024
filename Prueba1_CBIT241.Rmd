@@ -1,5 +1,5 @@
 ---
-title: "Notas P1"
+title: "Notas Prueba 1 - CBIT241 (2024)"
 author: "Horacio Samaniego"
 date: "`r Sys.Date()`"
 output: html_document
