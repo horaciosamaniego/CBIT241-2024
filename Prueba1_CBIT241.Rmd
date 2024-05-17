@@ -42,7 +42,7 @@ summary(p1$Nota)
 
 ## ¿Debo preocuparme?
 -   Nota 4.0 corresponde a un 60%
--   Como ocurre usualmente, existen 4 grupos. El promedio, los que "salva", los sobresalientes y los que estan super mal, en ese orden.
+-   Como ocurre usualmente, existen 4 grupos. El "_promedio_", los que "_salvaron_", los "_sobresalientes_" y los que están "_super mal_", en ese orden.
     1.  Te sacaste entre un 5 y un 6
 
         Estás en el promedio
