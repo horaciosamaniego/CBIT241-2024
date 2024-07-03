@@ -38,7 +38,7 @@ table(p2$Nota[which(p2$Nota > 1)])
 ```
 
 
-De los 24 que dieron la prueba, hay  8 rojos. Puedes ver también, según tu nota, en que percentil estás:
+De los 24 que dieron la prueba, hay  5 rojos. Puedes ver también, según tu nota, en que percentil estás:
 
 ```{r echo=FALSE}
 summary(p2$Nota[which(p2$Puntos > 1)])
