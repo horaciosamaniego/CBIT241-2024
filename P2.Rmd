@@ -1,0 +1,59 @@
+---
+title: "Notas Prueba 2 - CBIT241 (2024)"
+author: "Horacio Samaniego"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r warning=FALSE, include=FALSE}
+library(kableExtra)
+library(ggplot2)
+```
+
+
+- Puntaje máximo: 28pts
+- Exigencia: 55% (NOTA 4.0)
+
+```{r echo=FALSE, paged.print=TRUE}
+p2 = read.csv('~/Dropbox/cursos/uach/CBIT241/v2024/P2.csv')
+
+kable(p2, caption = "Puntajes y nota de prueba 2 (Ecología de paisaje)",booktabs = TRUE) |>
+  kable_styling("hover") |>
+  scroll_box( height = "300px")
+
+```
+
+### ¿Cómo le fué al curso?
+
+
+Aqui la tabla de frecuencia de las notas. Es una distibución de cuantas pruebas tuvieron qué nota.
+
+
+```{r echo=FALSE}
+table(p2$Nota[which(p2$Nota > 1)])
+
+```
+
+
+De los 24 que dieron la prueba, hay  8 rojos. Puedes ver también, según tu nota, en que percentil estás:
+
+```{r echo=FALSE}
+summary(p2$Nota[which(p2$Puntos > 1)])
+```
+
+
+
+
+## Distribución de notas
+
+
+```{r echo=FALSE, warning=FALSE}
+ggplot(p2[which(p2$Nota > 1),], aes(x = Nota)) + 
+  geom_histogram(aes(y = ..density..), bins = 10, colour = 1, fill = "white") + 
+  geom_density(lwd = 1.1, linetype = 1,colour = 4,fill = 4, alpha = 0.25,bw=0.35) +
+  scale_x_continuous(breaks=c(1.0:7.0))
+
+```
