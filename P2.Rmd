@@ -3,8 +3,8 @@ title: "Notas Prueba 2 - CBIT241 (2024)"
 author: "Horacio Samaniego"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 
